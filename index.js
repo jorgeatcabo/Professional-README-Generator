@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const inquirer = require('inquirer');
 
 inquirer
@@ -33,8 +35,18 @@ inquirer
       name: 'projectTest',
     },
   ])
-  // .then((response) =>
-  //   response.confirm === response.password
-  //     ? console.log('Success!')
-  //     : console.log('You forgot your password already?!')
-  //);
+  .then((response) =>{
+    fs.truncate(`${process.argv[2]}`, 0, function() {
+      //console.log('File Content Deleted')
+    } );
+    fs.appendFile(`${process.argv[2]}`, `#${response.projectTitle}
+    ${response.projectDescription}\n
+    ${response.projectInstallation}\n
+    ${response.projectUsage}\n
+    ${response.projectContribution}\n
+    ${response.projectTest}\n`, (err) =>
+    // TODO: Describe how this ternary operator works
+    err ? console.error(err) : console.log( `File ${process.argv[2]} created!`)
+    );
+  }
+  );
