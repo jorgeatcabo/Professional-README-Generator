@@ -55,23 +55,42 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) { 
   fs.writeFile(fileName, 
-`# ${data.projectTitle}\n
-# Project Description\n
-${data.projectDescription}\n
-# Project Installation\n
-${data.projectInstallation}\n
-# Project Usage\n
-${data.projectUsage}\n
-# Project Contribution\n
-${data.projectContribution}\n
-# Project Test\n
-${data.projectTest}\n
-# Project Gihub\n
-${data.projectGithub}\n
-# Project Email\n
-${data.projectEmail}\n
-# Project License\n
-${data.projectLicense}\n`, (err) =>
+`##### Table of Contents\r  
+[Title](#Title)  
+[Description](#Description)  
+[Installation](#Installation)  
+[Usage](#Usage)  
+[Contribution](#Contribution)  
+[Test](#Test)  
+[Gihub](#Gihub)  
+[Email](#Email)    
+[License](#License)    
+# Title
+${data.projectTitle}
+
+# Description
+${data.projectDescription}
+
+# Installation
+${data.projectInstallation}
+
+# Usage
+${data.projectUsage}
+
+# Contribution
+${data.projectContribution}
+
+# Test
+${data.projectTest}
+
+# Gihub
+${data.projectGithub}
+
+# Email
+${data.projectEmail}
+
+# License
+${data.projectLicense}`, (err) =>
   // TODO: Describe how this ternary operator works
   err ? console.error(err) : console.log( `File ${fileName} created!`)
   );
