@@ -1,10 +1,10 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  const badge=""
-  switch(data.projectLicense){
+  
+  switch(license){
     case "MIT":
-      badge="[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]"
+      badge="[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
       break;
 
     case "Apache 2.0":
@@ -31,7 +31,8 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-licenseBadge=renderLicenseBadge(data.projectLicense)
+  const [badge]=data.projectLicense
+licenseBadge=renderLicenseBadge(badge)
 return `
 ${licenseBadge}
 
@@ -53,27 +54,27 @@ ${data.projectTitle}
 ${data.projectDescription}
 
 # Installation
-${answers.projectInstallation}
+${data.projectInstallation}
 
 # Usage
-${answers.projectUsage}
+${data.projectUsage}
 
 # Contribution
-${answers.projectContribution}
+${data.projectContribution}
 
 # Test
-${answers.projectTest}
+${data.projectTest}
 
 # Gihub
-${answers.projectGithub}
+${data.projectGithub}
 
 # Email
-${answers.projectEmail}
+${data.projectEmail}
 
 # License
-${answers.projectLicense}
+${data.projectLicense}
 `
 ;
 }
 
-module.exports = generateMarkdown;
+exports.generateMarkdown = generateMarkdown;
