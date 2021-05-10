@@ -70,7 +70,6 @@ ${licenseLink}
 [Usage](#Usage)  
 [Contribution](#Contribution)  
 [Test](#Test)  
-[Gihub](#Gihub)  
 [Questions](#Questions)    
 [License](#License)    
 # Title
